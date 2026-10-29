@@ -1,0 +1,6 @@
+# Generated and local files
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example

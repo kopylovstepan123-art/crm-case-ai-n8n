@@ -1,0 +1,231 @@
+{
+  "id": "SVMjRg6p4Wst1Uw2",
+  "name": "My workflow",
+  "active": false,
+  "isArchived": false,
+  "versionId": "4ce98f52-7d1a-4873-9d64-1145d22b6566",
+  "activeVersionId": null,
+  "triggerCount": 0,
+  "nodeCount": 6,
+  "createdAt": "2026-10-21T11:47:45.109Z",
+  "updatedAt": "2026-10-21T14:28:37.569Z",
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "tags": [],
+  "parentFolderId": null,
+  "description": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0440\u0430\u0437\u0431\u043e\u0440 \u0447\u0435\u0442\u044b\u0440\u0451\u0445 \u0441\u0438\u043d\u0442\u0435\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 CRM-\u043a\u0435\u0439\u0441\u043e\u0432: \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u0430, OpenAI-\u043e\u0431\u044a\u044f\u0441\u043d\u0435\u043d\u0438\u0435 \u0438 \u0441\u0432\u043e\u0434\u043a\u0430 \u0441 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u043e\u0439 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u043e\u043c.",
+  "scopes": [
+    "execution:delete",
+    "execution:list",
+    "execution:read",
+    "execution:reveal",
+    "workflow:create",
+    "workflow:delete",
+    "workflow:disableRedaction",
+    "workflow:enableRedaction",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:export",
+    "workflow:import",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update"
+  ],
+  "canExecute": true,
+  "connections": {
+    "Load Test Cases": {
+      "main": [
+        [
+          {
+            "node": "Apply Rules & Validate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apply Rules & Validate": {
+      "main": [
+        [
+          {
+            "node": "LLM Case Explanation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LLM Case Explanation",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Case Explanation": {
+      "main": [
+        [
+          {
+            "node": "Build Final Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u0443\u044e \u0441\u0432\u043e\u0434\u043a\u0443": {
+      "main": [
+        [
+          {
+            "node": "Load Test Cases",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        112,
+        288
+      ],
+      "id": "337046ea-74c7-4dd4-961b-f74965fe9224",
+      "name": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u0443\u044e \u0441\u0432\u043e\u0434\u043a\u0443"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\"cases\":[{\"case_id\":\"C-17\",\"process\":\"employee_onboarding\",\"facts\":[{\"text\":\"\u041f\u0435\u0440\u0432\u044b\u0439 \u0432\u044b\u0445\u043e\u0434 \u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0443 \u2014 \u0437\u0430\u0432\u0442\u0440\u0430.\",\"source\":\"CRM\",\"original_value\":\"\u041f\u0435\u0440\u0432\u044b\u0439 \u0432\u044b\u0445\u043e\u0434 \u2014 \u0437\u0430\u0432\u0442\u0440\u0430\",\"observed_at\":null},{\"text\":\"\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u043e\u0436\u0438\u0434\u0430\u044e\u0442\u0441\u044f.\",\"source\":\"CRM\",\"original_value\":\"\u043e\u0436\u0438\u0434\u0430\u044e\u0442\u0441\u044f\",\"observed_at\":null},{\"text\":\"\u0421\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u043a: \u00ab\u0412\u0447\u0435\u0440\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0438 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044e \u0432 \u043b\u0438\u0447\u043a\u0443\u00bb. \u042d\u0442\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438\u0437 \u043f\u0435\u0440\u0435\u043f\u0438\u0441\u043a\u0438, \u0430 \u043d\u0435 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432 CRM.\",\"source\":\"employee\",\"original_value\":\"\u0412\u0447\u0435\u0440\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0438 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044e \u0432 \u043b\u0438\u0447\u043a\u0443\",\"observed_at\":\"\u0432\u0447\u0435\u0440\u0430\"}]},{\"case_id\":\"C-24\",\"process\":\"employee_offboarding\",\"facts\":[{\"text\":\"\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0440\u0430\u0431\u043e\u0447\u0438\u0439 \u0434\u0435\u043d\u044c \u2014 \u0441\u0435\u0433\u043e\u0434\u043d\u044f.\",\"source\":\"CRM\",\"original_value\":\"\u0441\u0435\u0433\u043e\u0434\u043d\u044f\",\"observed_at\":null},{\"text\":\"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044f \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442.\",\"source\":\"CRM\",\"original_value\":\"\u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442\",\"observed_at\":null},{\"text\":\"\u0421\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u043a: \u00ab\u0421 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0435\u043c \u0432\u0441\u0451 \u043e\u0431\u0441\u0443\u0434\u0438\u043b\u0438, \u043e\u043d \u0432 \u043a\u0443\u0440\u0441\u0435\u00bb. \u042d\u0442\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438\u0437 \u043f\u0435\u0440\u0435\u043f\u0438\u0441\u043a\u0438, \u0430 \u043d\u0435 \u0437\u0430\u043f\u0438\u0441\u044c \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f \u0432 CRM.\",\"source\":\"employee\",\"original_value\":\"\u0421 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0435\u043c \u0432\u0441\u0451 \u043e\u0431\u0441\u0443\u0434\u0438\u043b\u0438, \u043e\u043d \u0432 \u043a\u0443\u0440\u0441\u0435\",\"observed_at\":null}]},{\"case_id\":\"P-08\",\"process\":\"card_delivery_delay\",\"facts\":[{\"text\":\"\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043d\u0430 \u0442\u043e\u0447\u043a\u0443 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430 \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0434\u043e 10:00.\",\"source\":\"CRM\",\"original_value\":\"\u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0434\u043e 10:00\",\"observed_at\":null},{\"text\":\"\u0421\u0442\u0430\u0442\u0443\u0441 CRM \u2014 \u00ab\u0412 \u043f\u0443\u0442\u0438\u00bb.\",\"source\":\"CRM\",\"original_value\":\"\u0412 \u043f\u0443\u0442\u0438\",\"observed_at\":null},{\"text\":\"\u041a\u0443\u0440\u044c\u0435\u0440: \u00ab\u0417\u0430\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0441\u044c, \u0440\u0430\u043d\u044c\u0448\u0435 13:00 \u043d\u0435 \u043f\u0440\u0438\u0435\u0434\u0443\u00bb.\",\"source\":\"courier\",\"original_value\":\"\u0417\u0430\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0441\u044c, \u0440\u0430\u043d\u044c\u0448\u0435 13:00 \u043d\u0435 \u043f\u0440\u0438\u0435\u0434\u0443\",\"observed_at\":null}]},{\"case_id\":\"P-09\",\"process\":\"card_receipt\",\"facts\":[{\"text\":\"\u0412 CRM \u0441\u0442\u0430\u0442\u0443\u0441 \u00ab\u041f\u0440\u0438\u043d\u044f\u0442\u043e\u00bb.\",\"source\":\"CRM\",\"original_value\":\"\u041f\u0440\u0438\u043d\u044f\u0442\u043e\",\"observed_at\":null},{\"text\":\"\u041f\u0440\u0438\u0451\u043c\u043a\u0430 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0430 \u0432 09:20.\",\"source\":\"CRM\",\"original_value\":\"09:20\",\"observed_at\":\"09:20\"},{\"text\":\"\u041f\u043e\u043b\u0443\u0447\u0430\u0442\u0435\u043b\u044c: \u00ab\u041a\u0430\u0440\u0442\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u043b\u0438, \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043b\u0438\u00bb.\",\"source\":\"recipient\",\"original_value\":\"\u041a\u0430\u0440\u0442\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u043b\u0438, \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043b\u0438\",\"observed_at\":null}]}]}",
+        "options": {},
+        "includeOtherFields": false
+      },
+      "id": "n-rm-load-test-cases",
+      "name": "Load Test Cases",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        464,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const incoming = $input.first()?.json ?? {};\nconst cases = Array.isArray(incoming.cases) ? incoming.cases : [];\nconst rules = {\n  \"C-17\": {\n    priority: \"high\",\n    intervention_required: true,\n    priority_requires_approval: true,\n    discrepancy: \"\u0412 CRM \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u043e\u0436\u0438\u0434\u0430\u044e\u0442\u0441\u044f, \u0430 \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u043a \u0441\u043e\u043e\u0431\u0449\u0430\u0435\u0442 \u043e\u0431 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0435 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044e; \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u043d\u0435 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u044b.\",\n    unknowns: [\"\u041f\u043e\u043b\u0443\u0447\u0438\u043b \u043b\u0438 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b\", \"\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u044b \u043b\u0438 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0435\"],\n    fallback_next_action: \"\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u0435 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0445 \u044d\u0442\u0430\u043f\u043e\u0432 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f.\",\n    expected: { priority: \"high\", intervention_required: true }\n  },\n  \"C-24\": {\n    priority: \"high\",\n    intervention_required: true,\n    priority_requires_approval: true,\n    discrepancy: \"\u0421\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u043a \u0441\u043e\u043e\u0431\u0449\u0430\u0435\u0442 \u043e\u0431 \u043e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0438 \u0443\u0432\u043e\u043b\u044c\u043d\u0435\u043d\u0438\u044f, \u043d\u043e \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044f \u0432 CRM \u043d\u0435\u0442.\",\n    unknowns: [\"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u043b \u043b\u0438 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u0443\u0432\u043e\u043b\u044c\u043d\u0435\u043d\u0438\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u043c \u0441\u043f\u043e\u0441\u043e\u0431\u043e\u043c\", \"\u0421\u043e\u0431\u043b\u044e\u0434\u0435\u043d\u0430 \u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0430 \u0443\u0432\u043e\u043b\u044c\u043d\u0435\u043d\u0438\u044f\"],\n    fallback_next_action: \"\u041e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u0443 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044f \u0438 \u0441\u043e\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u044b \u0441\u0435\u0433\u043e\u0434\u043d\u044f.\",\n    expected: { priority: \"high\", intervention_required: true }\n  },\n  \"P-08\": {\n    priority: \"high\",\n    intervention_required: true,\n    priority_requires_approval: true,\n    discrepancy: \"\u0421\u0440\u043e\u043a \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u0432 CRM \u2014 \u0434\u043e 10:00, \u0430 \u043a\u0443\u0440\u044c\u0435\u0440 \u0441\u043e\u043e\u0431\u0449\u0430\u0435\u0442 \u043e \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0435 \u043c\u0438\u043d\u0438\u043c\u0443\u043c \u0434\u043e 13:00.\",\n    unknowns: [\"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0451\u043d \u043b\u0438 \u043d\u043e\u0432\u044b\u0439 \u0441\u0440\u043e\u043a \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438\"],\n    fallback_next_action: \"\u0423\u0442\u043e\u0447\u043d\u0438\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u0441\u0440\u043e\u043a \u0443 \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0438 \u043f\u0440\u0438 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u0443\u0432\u0435\u0434\u043e\u043c\u0438\u0442\u044c \u043f\u043e\u043b\u0443\u0447\u0430\u0442\u0435\u043b\u044f.\",\n    expected: { priority: \"high\", intervention_required: true }\n  },\n  \"P-09\": {\n    priority: \"low\",\n    intervention_required: false,\n    priority_requires_approval: false,\n    discrepancy: null,\n    unknowns: [],\n    fallback_next_action: \"\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0432\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f, \u0435\u0441\u043b\u0438 \u043d\u0435\u0442 \u0434\u0440\u0443\u0433\u0438\u0445 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0445 \u044d\u0442\u0430\u043f\u043e\u0432.\",\n    expected: { priority: \"low\", intervention_required: false }\n  }\n};\nconst rows = cases.length ? cases : [{ case_id: null, facts: [] }];\nreturn rows.map((raw) => {\n  const errors = [];\n  if (!raw || typeof raw.case_id !== \"string\") errors.push(\"case_id \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u043b\u0438 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0441\u0442\u0440\u043e\u043a\u043e\u0439\");\n  if (!Array.isArray(raw?.facts) || raw.facts.length === 0) errors.push(\"facts \u0434\u043e\u043b\u0436\u0435\u043d \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0445\u043e\u0442\u044f \u0431\u044b \u043e\u0434\u0438\u043d \u0444\u0430\u043a\u0442\");\n  const facts = Array.isArray(raw?.facts) ? raw.facts : [];\n  facts.forEach((fact, index) => {\n    if (!fact || typeof fact.text !== \"string\" || typeof fact.source !== \"string\" || typeof fact.original_value !== \"string\") {\n      errors.push(\"\u041d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 \u0444\u0430\u043a\u0442 \u0441 \u0438\u043d\u0434\u0435\u043a\u0441\u043e\u043c \" + index + \": \u043d\u0443\u0436\u043d\u044b text, source \u0438 original_value\");\n    }\n  });\n  const rule = rules[raw?.case_id] ?? null;\n  if (!rule) errors.push(\"\u0414\u043b\u044f case_id \u043d\u0435\u0442 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u0430\");\n  return { json: {\n    case_id: raw?.case_id ?? null,\n    process: raw?.process ?? null,\n    facts,\n    input_valid: errors.length === 0,\n    validation_errors: errors,\n    priority: rule?.priority ?? \"unknown\",\n    intervention_required: rule?.intervention_required ?? true,\n    priority_requires_approval: rule?.priority_requires_approval ?? true,\n    discrepancy: rule?.discrepancy ?? null,\n    unknowns: rule?.unknowns ?? [],\n    fallback_next_action: rule?.fallback_next_action ?? \"\u041f\u0435\u0440\u0435\u0434\u0430\u0442\u044c \u043a\u0435\u0439\u0441 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0443 \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430.\",\n    expected: rule?.expected ?? null\n  }};\n});"
+      },
+      "id": "n-rm-apply-rules",
+      "name": "Apply Rules & Validate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        704,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ \"\u0414\u0430\u0439 \u043a\u043e\u0440\u043e\u0442\u043a\u043e\u0435 \u043e\u0431\u044a\u044f\u0441\u043d\u0435\u043d\u0438\u0435 \u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u044e \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u043e \u044d\u0442\u043e\u043c\u0443 \u043a\u0435\u0439\u0441\u0443. \u041e\u0442\u0432\u0435\u0442 \u2014 JSON \u0441 \u043f\u043e\u043b\u044f\u043c\u0438 explanation \u0438 recommended_next_step. \u0412\u0445\u043e\u0434: \" + JSON.stringify({case_id:$json.case_id, process:$json.process, input_valid:$json.input_valid, validation_errors:$json.validation_errors, facts:$json.facts, priority:$json.priority, intervention_required:$json.intervention_required, discrepancy:$json.discrepancy, unknowns:$json.unknowns, fallback_next_action:$json.fallback_next_action}) }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "\u0422\u044b \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u0448\u044c \u043f\u0435\u0440\u0432\u0438\u0447\u043d\u043e \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0435 CRM-\u043a\u0435\u0439\u0441\u044b. \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0435 \u0444\u0430\u043a\u0442\u044b. \u041d\u0435 \u0432\u044b\u0432\u043e\u0434\u0438 \u0438 \u043d\u0435 \u043c\u0435\u043d\u044f\u0439 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442, \u0441\u0442\u0430\u0442\u0443\u0441 \u0432\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430, \u0444\u0430\u043a\u0442\u044b, \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0438\u043b\u0438 \u0432\u0440\u0435\u043c\u044f. \u041d\u0435 \u0441\u0447\u0438\u0442\u0430\u0439 \u0441\u043b\u043e\u0432\u0430 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435\u043c \u0437\u0430\u043f\u0438\u0441\u0438 CRM. \u041d\u0435 \u043f\u0440\u0438\u0434\u0443\u043c\u044b\u0432\u0430\u0439 \u043f\u0440\u0438\u0447\u0438\u043d\u044b, \u0441\u0442\u0430\u0442\u0443\u0441\u044b, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f, \u0434\u0430\u0442\u044b \u0438\u043b\u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f. \u041d\u0435 \u0438\u0437\u043c\u0435\u043d\u044f\u0439 CRM \u0438 \u043d\u0435 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0439 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f. \u0412\u0435\u0440\u043d\u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u0432\u0430\u043b\u0438\u0434\u043d\u044b\u0439 JSON-\u043e\u0431\u044a\u0435\u043a\u0442 \u0441 \u0434\u0432\u0443\u043c\u044f \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u044b\u043c\u0438 \u043f\u043e\u043b\u044f\u043c\u0438: explanation \u0438 recommended_next_step. \u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u044f \u0434\u043e\u043b\u0436\u043d\u0430 \u0431\u044b\u0442\u044c \u043a\u0440\u0430\u0442\u043a\u043e\u0439, \u0441\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u043d\u043e\u0439 \u0441 fallback_next_action \u0438 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0442\u044c \u043d\u043e\u0432\u044b\u0445 \u0444\u0430\u043a\u0442\u043e\u0432. \u0415\u0441\u043b\u0438 input_valid=false, \u043f\u043e\u043f\u0440\u043e\u0441\u0438 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0432\u0445\u043e\u0434\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "n-rm-llm-case-explanation",
+      "name": "LLM Case Explanation",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        976,
+        304
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 1000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-6-luna"
+        },
+        "builtInTools": {},
+        "options": {
+          "timeout": 60000,
+          "maxRetries": 2
+        }
+      },
+      "id": "n-rm-openai-chat-model",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        976,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rules = $(\"Apply Rules & Validate\").all();\nconst responses = $input.all();\nconst cases = [];\nconst errors = [];\n\nfor (let i = 0; i < rules.length; i++) {\n  const base = rules[i]?.json ?? {};\n  const modelItem = responses[i]?.json ?? {};\n  let modelStatus = \"ok\";\n  let parsed = null;\n  let rawText = modelItem.text ?? modelItem.output ?? modelItem.response ?? modelItem.message?.content ?? null;\n\n  if (!base.input_valid) {\n    modelStatus = \"skipped_invalid_input\";\n  } else if (modelItem.error || modelItem.errorMessage || modelItem.message?.error) {\n    modelStatus = \"model_error\";\n  } else {\n    if (typeof rawText === \"object\" && rawText !== null) {\n      rawText = rawText.text ?? rawText.content ?? JSON.stringify(rawText);\n    }\n    if (typeof rawText === \"string\") {\n      const fence = String.fromCharCode(96).repeat(3);\n      let clean = rawText.trim();\n      if (clean.startsWith(fence)) clean = clean.slice(fence.length).replace(/^(?:json)?\\s*/i, \"\");\n      if (clean.endsWith(fence)) clean = clean.slice(0, -fence.length).trim();\n      try {\n        parsed = JSON.parse(clean);\n      } catch (e) {\n        modelStatus = \"invalid_json\";\n      }\n    } else {\n      modelStatus = \"invalid_json\";\n    }\n    if (\n      modelStatus === \"ok\" &&\n      (!parsed ||\n        typeof parsed.explanation !== \"string\" ||\n        typeof parsed.recommended_next_step !== \"string\" ||\n        !parsed.recommended_next_step.trim())\n    ) {\n      modelStatus = \"invalid_json\";\n    }\n  }\n\n  const fallbackUsed = modelStatus !== \"ok\";\n  const nextAction = fallbackUsed\n    ? base.fallback_next_action\n    : parsed.recommended_next_step.trim();\n  const explanation = fallbackUsed\n    ? modelStatus === \"model_error\"\n      ? \"\u041c\u043e\u0434\u0435\u043b\u044c \u043d\u0435 \u043e\u0442\u0432\u0435\u0442\u0438\u043b\u0430; \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u044b \u0444\u0430\u043a\u0442\u044b \u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u043f\u043e \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u043e\u043c\u0443 \u043f\u0440\u0430\u0432\u0438\u043b\u0443.\"\n      : modelStatus === \"invalid_json\"\n        ? \"\u041e\u0442\u0432\u0435\u0442 \u043c\u043e\u0434\u0435\u043b\u0438 \u043d\u0435 \u043f\u0440\u043e\u0448\u0451\u043b \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 JSON; \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u044b \u0444\u0430\u043a\u0442\u044b \u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u043f\u043e \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u043e\u043c\u0443 \u043f\u0440\u0430\u0432\u0438\u043b\u0443.\"\n        : \"\u0412\u0445\u043e\u0434\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0435 \u043f\u0440\u043e\u0448\u043b\u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443; \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0440\u0443\u0447\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430.\"\n    : parsed.explanation.trim();\n\n  const acceptance = base.expected\n    ? {\n        priority_matches: base.priority === base.expected.priority,\n        intervention_matches: base.intervention_required === base.expected.intervention_required,\n      }\n    : { priority_matches: false, intervention_matches: false };\n\n  const caseErrors = [];\n  if (!base.input_valid) {\n    caseErrors.push({ type: \"input_validation\", details: base.validation_errors });\n    errors.push({ case_id: base.case_id, type: \"input_validation\", details: base.validation_errors });\n  }\n  if (modelStatus === \"model_error\" || modelStatus === \"invalid_json\") {\n    caseErrors.push({ type: modelStatus });\n    errors.push({ case_id: base.case_id, type: modelStatus });\n  }\n\n  const statusLabel = !base.input_valid\n    ? \"\u26a0\ufe0f \u041e\u0448\u0438\u0431\u043a\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 - \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c\"\n    : base.intervention_required\n      ? fallbackUsed\n        ? \"\ud83d\udd34 \u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0432\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430 - fallback\"\n        : \"\ud83d\udd34 \u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0432\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430\"\n      : fallbackUsed\n        ? \"\ud83d\udfe0 \u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u043e\u0442\u0432\u0435\u0442 \u043c\u043e\u0434\u0435\u043b\u0438\"\n        : \"\ud83d\udfe2 \u0412\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e \u043d\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f*\";\n\n  const facts = Array.isArray(base.facts) ? base.facts : [];\n  const factsSummary = facts\n    .map((fact) => {\n      const time = fact.observed_at ? \" (\u0432\u0440\u0435\u043c\u044f \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430: \" + fact.observed_at + \")\" : \"\";\n      return fact.source + \": \" + fact.text + time;\n    })\n    .join(\"\\n\");\n\n  cases.push({\n    case_id: base.case_id,\n    status: statusLabel,\n    intervention_required: base.intervention_required,\n    priority: base.priority,\n    priority_requires_approval: base.priority_requires_approval,\n    facts_summary: factsSummary,\n    facts,\n    discrepancy: base.discrepancy,\n    unknowns: base.unknowns,\n    explanation,\n    next_action: nextAction,\n    requires_human_review: true,\n    model_status: modelStatus,\n    expected: base.expected,\n    acceptance,\n    validation_errors: base.validation_errors,\n    fallback_used: fallbackUsed,\n    case_errors: caseErrors,\n  });\n}\n\nconst runSummary = {\n  case_count: cases.length,\n  all_input_valid: cases.every((item) => item.validation_errors.length === 0),\n  all_expected_rules_match: cases.every(\n    (item) => item.acceptance.priority_matches && item.acceptance.intervention_matches\n  ),\n  model_success_count: cases.filter((item) => item.model_status === \"ok\").length,\n  error_count: errors.length,\n  human_review_required: cases.some((item) => item.requires_human_review),\n};\nconst runSummaryText =\n  \"\u041a\u0435\u0439\u0441\u043e\u0432: \" + runSummary.case_count +\n  \"; \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0441\u043e\u0432\u043f\u0430\u043b\u0438: \" + cases.filter((item) => item.acceptance.priority_matches && item.acceptance.intervention_matches).length + \"/\" + runSummary.case_count +\n  \"; \u043e\u0442\u0432\u0435\u0442\u044b \u043c\u043e\u0434\u0435\u043b\u0438: \" + runSummary.model_success_count + \"/\" + runSummary.case_count +\n  \"; \u043e\u0448\u0438\u0431\u043e\u043a: \" + runSummary.error_count;\n\nreturn cases.map((item) => ({\n  json: {\n    ...item,\n    run_summary: runSummaryText,\n    run_metrics: runSummary,\n    errors,\n  },\n}));",
+        "mode": "runOnceForAllItems",
+        "language": "javaScript"
+      },
+      "id": "n-rm-build-final-summary",
+      "name": "Build Final Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1248,
+        304
+      ]
+    }
+  ],
+  "nodeGroups": [
+    {
+      "id": "67c2f28e-6e91-49ce-a9fd-7230d2710b80",
+      "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u0430",
+      "nodeNames": [
+        "Load Test Cases",
+        "Apply Rules & Validate"
+      ],
+      "description": "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u0442 \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0435 \u0444\u0430\u043a\u0442\u044b \u0438 \u043f\u0440\u0438\u043c\u0435\u043d\u044f\u0435\u0442 \u043f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u0430."
+    },
+    {
+      "id": "e0a15f2c-47ec-40c9-875b-80a6b16b1e02",
+      "name": "LLM \u0438 \u0438\u0442\u043e\u0433\u043e\u0432\u0430\u044f \u0441\u0432\u043e\u0434\u043a\u0430",
+      "nodeNames": [
+        "OpenAI Chat Model",
+        "LLM Case Explanation",
+        "Build Final Summary"
+      ],
+      "description": "\u0413\u043e\u0442\u043e\u0432\u0438\u0442 \u043a\u0440\u0430\u0442\u043a\u043e\u0435 \u043e\u0431\u044a\u044f\u0441\u043d\u0435\u043d\u0438\u0435, \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0439 fallback \u0438 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u043e\u043c."
+    }
+  ],
+  "activeVersion": null,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  }
+}
